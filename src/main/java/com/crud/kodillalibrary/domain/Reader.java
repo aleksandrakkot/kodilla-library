@@ -1,46 +1,49 @@
 package com.crud.kodillalibrary.domain;
 
-
 import com.sun.istack.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-
 import javax.persistence.*;
+import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 @NoArgsConstructor
 @AllArgsConstructor
 @Getter
 @Setter
-@Entity(name = "books")
-public class Book {
+@Entity(name = "readers")
+public class Reader {
     @Id
     @NotNull
     @GeneratedValue
     private Long id;
 
-    @Column(name = "status")
-    private String status = "available";
+    @Column(name = "name")
+    private String name;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "publication_id")
-    private Publication publication;
+    @Column(name = "surname")
+    private String surname;
+
+    @Column(name = "created")
+    private LocalDate created;
 
     @OneToMany(
             targetEntity = Borrowing.class,
-            mappedBy = "book",
+            mappedBy = "reader",
             cascade = CascadeType.ALL,
             fetch = FetchType.EAGER
     )
     private List<Borrowing> borrowings = new ArrayList<>();
 
-    public Book(Long id, String status, Publication publication) {
+    public Reader(Long id, String name, String surname, LocalDate created) {
         this.id = id;
-        this.status = status;
-        this.publication = publication;
+        this.name = name;
+        this.surname = surname;
+        this.created = created;
     }
 }
