@@ -1,4 +1,4 @@
-# Aplikacja Biblioteki Kodilla
+# Prosta aplikacja biblioteki
 Jest to system zarządzania biblioteką, który umożliwia zarządzanie książkami, publikacjami, czytelnikami i wypożyczeniami w bibliotece. Aplikacja jest zbudowana w oparciu o Spring Boot i udostępnia RESTful API do zarządzania zasobami biblioteki.
 
 ## Technologie
