@@ -1,87 +1,87 @@
-# Kodilla Library Application
-This is a library management system that allows managing books, publications, readers, and borrowings in a library. It is built with Spring Boot, and it exposes a RESTful API for managing library resources.
+# Aplikacja Biblioteki Kodilla
+Jest to system zarządzania biblioteką, który umożliwia zarządzanie książkami, publikacjami, czytelnikami i wypożyczeniami w bibliotece. Aplikacja jest zbudowana w oparciu o Spring Boot i udostępnia RESTful API do zarządzania zasobami biblioteki.
 
-## Technologies
-This project is built with:
+## Technologie
+Projekt zbudowany jest z wykorzystaniem następujących technologii:
 - **Java 17**
 - **Spring Boot 2.6**
-- **MySQL Database**: 
+- **Baza danych MySQL**
 - **Lombok**
 - **Maven**
 
-## API Endpoints
+## Endpoints API
 ### Books
 
 - **GET** `/v1/library/books`  
-  Retrieves a list of all books in the library.
+  Pobiera listę wszystkich książek w bibliotece.
 
 - **GET** `/v1/library/books/{bookId}`  
-  Retrieves details for a specific book by ID.
+  Pobiera szczegóły dotyczące konkretnej książki po jej ID.
 
 - **POST** `/v1/library/books`  
-  Creates a new book.  
-  **Request Body**: JSON with BookDto details.
+  Tworzy nową książkę.  
+  **Treść żądania**: JSON z danymi `BookDto`.
 
 - **PUT** `/v1/library/books`  
-  Updates an existing book.  
-  **Request Body**: JSON with BookDto details.
+  Aktualizuje istniejącą książkę.  
+  **Treść żądania**: JSON z danymi `BookDto`.
 
 - **DELETE** `/v1/library/books/{bookId}`  
-  Deletes a book by ID.
+  Usuwa książkę po jej ID.
 
 ### Publications
 
 - **GET** `/v1/library/publications`  
-  Retrieves a list of all publications in the library.
+  Pobiera listę wszystkich publikacji w bibliotece.
 
 - **GET** `/v1/library/publications/{publicationId}`  
-  Retrieves details of a specific publication by its ID.
+  Pobiera szczegóły konkretnej publikacji po jej ID.
 
 - **POST** `/v1/library/publications`  
-  Creates a new publication record.  
-  **Request Body**: JSON with `PublicationDto` details.
+  Tworzy nową publikację.  
+  **Treść żądania**: JSON z danymi `PublicationDto`.
 
 - **PUT** `/v1/library/publications`  
-  Updates an existing publication record.  
-  **Request Body**: JSON with `PublicationDto` details.
+  Aktualizuje istniejącą publikację.  
+  **Treść żądania**: JSON z danymi `PublicationDto`.
 
 - **DELETE** `/v1/library/publications/{publicationId}`  
-  Deletes a publication record by ID.
+  Usuwa publikację po jej ID.
 
-  ### Readers 
-
-- **GET** `/v1/library/readers`  
-  Retrieves a list of all readers registered in the library.
-
-- **GET** `/v1/library/readers/{readerId}`  
-  Retrieves details of a specific reader by their ID.
-
-- **POST** `/v1/library/readers`  
-  Registers a new reader in the library.  
-  **Request Body**: JSON with `ReaderDto` details.
-
-- **PUT** `/v1/library/readers`  
-  Updates an existing reader's information.  
-  **Request Body**: JSON with `ReaderDto` details.
-
-- **DELETE** `/v1/library/readers/{readerId}`  
-  Deletes a reader from the library system by their ID.
-
-  ### Readers 
+### Readers
 
 - **GET** `/v1/library/readers`  
-  Retrieves a list of all readers registered in the library.
+  Pobiera listę wszystkich czytelników zarejestrowanych w bibliotece.
 
 - **GET** `/v1/library/readers/{readerId}`  
-  Retrieves details of a specific reader by their ID.
+  Pobiera szczegóły konkretnego czytelnika po jego ID.
 
 - **POST** `/v1/library/readers`  
-  Registers a new reader in the library.  
-  **Request Body**: Requires JSON payload with `ReaderDto` details.
+  Rejestruje nowego czytelnika w bibliotece.  
+  **Treść żądania**: JSON z danymi `ReaderDto`.
 
 - **PUT** `/v1/library/readers`  
-  Updates an existing reader's information.  
-  **Request Body**: Requires JSON payload with `ReaderDto` details.
+  Aktualizuje dane istniejącego czytelnika.  
+  **Treść żądania**: JSON z danymi `ReaderDto`.
 
 - **DELETE** `/v1/library/readers/{readerId}`  
-  Deletes a reader from the library system by their ID.
+  Usuwa czytelnika z systemu bibliotecznego po jego ID.
+
+### Borrowings
+
+- **GET** `/v1/library/borrowings`  
+  Pobiera listę wszystkich zapisów wypożyczeń w bibliotece.
+
+- **GET** `/v1/library/borrowings/{borrowingId}`  
+  Pobiera szczegóły konkretnego wypożyczenia po jego ID.
+
+- **POST** `/v1/library/borrowings`  
+  Tworzy nowe wypożyczenie.  
+  **Treść żądania**: JSON z danymi `BorrowingDto`.
+
+- **PUT** `/v1/library/borrowings`  
+  Aktualizuje dane wypożyczenia.  
+  **Treść żądania**: JSON z danymi `BorrowingDto`.
+
+- **DELETE** `/v1/library/borrowings/{borrowingId}`  
+  Usuwa zapis wypożyczenia po jego ID.
